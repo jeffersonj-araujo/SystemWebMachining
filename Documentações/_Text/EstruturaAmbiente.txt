@@ -1,0 +1,33 @@
+TRABALHO EM GRUPO			
+A Métrica de Use Case Points (UCP)			
+			
+ORIENTAÇÃO GERAL PARA OS TRABALHOS:			
+ 			
+1) Deverão ser escritos em língua portuguesa.			
+2) Todas as páginas deverão conter as referências bibliográficas utilizadas.			
+3) O Trabalho terá no mínimo 12 páginas e no máximo 24 páginas  (incluindo capa, índice, conteúdo, etc)			
+4) Deverão ser coletados no mínimo 5 artigos (arquivos) diferentes na internet sobre o assunto.			
+5) Deverá ser seguida a orientação e formatação enviada em anexo como Modelo.			
+ DICAS DE PESQUISA:			
+ Pesquisar no GOOGLE:			
+ 			
+Em páginas do Brasil:			
+ 			
+USE CASE POINTS			
+pontos de caso de uso			
+UCP + METRICA			
+USE CASE POINTS + ARTIGOS			
+Casos de Uso + Ponto de Função			
+comparação UCP E FPA			
+Analise de Pontos de Função e Pontos de Caso de Uso			
+ e OUTRAS COMBINAÇÕES ...			
+ Pesquisar TAMBÉM em			
+http://www.bfpug.com.br/			
+http://www.bfpug.com.br/artigos.htm
+
+
+Comparação UCP E FPA
+
+Analise Ponto de Função
+        e 
+Ponto Caso de Uso
