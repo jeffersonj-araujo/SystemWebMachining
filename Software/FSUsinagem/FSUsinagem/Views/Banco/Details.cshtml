@@ -1,0 +1,57 @@
+﻿@model FSUsinagem.Models.Banco
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Banco</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Codigo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Codigo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Agencia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Agencia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ContaCorrente)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ContaCorrente)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SaldoDoBanco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SaldoDoBanco)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataDoSaldo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDoSaldo)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.BancoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

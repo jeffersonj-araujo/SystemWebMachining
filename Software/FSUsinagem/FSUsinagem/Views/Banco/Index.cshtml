@@ -1,0 +1,63 @@
+﻿@model IEnumerable<FSUsinagem.Models.Banco>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Agencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContaCorrente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SaldoDoBanco)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataDoSaldo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Agencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContaCorrente)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaldoDoBanco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataDoSaldo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BancoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BancoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BancoId })
+        </td>
+    </tr>
+}
+
+</table>
