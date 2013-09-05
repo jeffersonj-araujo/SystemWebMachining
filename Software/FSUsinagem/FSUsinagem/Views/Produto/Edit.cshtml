@@ -1,0 +1,70 @@
+﻿@model FSUsinagem.Models.Produto
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Produto</legend>
+
+        @Html.HiddenFor(model => model.ProdutoId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Codigo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Codigo)
+            @Html.ValidationMessageFor(model => model.Codigo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Descricao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+            @Html.ValidationMessageFor(model => model.Descricao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorDeCusto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorDeCusto)
+            @Html.ValidationMessageFor(model => model.ValorDeCusto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ValorDeVenda)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ValorDeVenda)
+            @Html.ValidationMessageFor(model => model.ValorDeVenda)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TipoDeProdutoId, "TipoDeProduto")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TipoDeProdutoId", String.Empty)
+            @Html.ValidationMessageFor(model => model.TipoDeProdutoId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

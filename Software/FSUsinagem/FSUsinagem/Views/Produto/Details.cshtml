@@ -1,0 +1,50 @@
+﻿@model FSUsinagem.Models.Produto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Produto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Codigo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Codigo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Descricao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorDeCusto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorDeCusto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorDeVenda)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorDeVenda)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoDeProduto.Descricao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoDeProduto.Descricao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ProdutoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
