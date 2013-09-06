@@ -25,9 +25,16 @@
                 <li>@Html.ActionLink("Lista de tarefas pendentes", "Index", "Home", new { area = "" }, null)</li>
                 <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
             </ul>
+            <ul id="menu">
+                <li>@Html.ActionLink("Bancos", "Banco", "Banco", new { area = "Banco" }, null)</li>
+                <li>@Html.ActionLink("Estado Do Pedidos", "Index", "Help", new { area = "" }, null)</li>
+                <li>@Html.ActionLink("Pessoas Física ", "Index", "Home", new { area = "" }, null)</li>
+                <li>@Html.ActionLink("Produtos", "Index", "Help", new { area = "" }, null)</li>
+                <li>@Html.ActionLink("Tipos de Produtos", "Index", "Home", new { area = "" }, null)</li>               
+            </ul>
         </nav> 
-        <p>Saiba mais sobre <a href="http://go.microsoft.com/fwlink/?LinkId=273732">Aplicativos de página única</a></p>
-        <p>&copy; @DateTime.Now.Year - Meu aplicativo ASP.NET MVC</p>
+        <p>Saiba mais sobre a <a href="http://google.com.br">FitSoft</a></p>
+        <p>&copy; @DateTime.Now.Year -FitSoft - Consultoria e Engenharia de Projeto S.A.</p>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
