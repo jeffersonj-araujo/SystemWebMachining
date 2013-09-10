@@ -24,5 +24,7 @@ namespace FSUsinagem.Models
         public DbSet<Banco> Bancoes { get; set; }
 
         public DbSet<EstadoDoPedido> EstadoDoPedidoes { get; set; }
+
+        public DbSet<CodigoDeOperacao> CodigoDeOperacaos { get; set; }
     }
 }
