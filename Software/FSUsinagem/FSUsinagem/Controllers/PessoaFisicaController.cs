@@ -18,7 +18,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Index()
         {
-            return View(db.PessoaFisicas.ToList());
+            return View(db.PessoasFisicas.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            PessoaFisica pessoafisica = db.PessoaFisicas.Find(id);
+            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
             if (pessoafisica == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace FSUsinagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PessoaFisicas.Add(pessoafisica);
+                db.PessoasFisicas.Add(pessoafisica);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            PessoaFisica pessoafisica = db.PessoaFisicas.Find(id);
+            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
             if (pessoafisica == null)
             {
                 return HttpNotFound();
@@ -93,7 +93,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            PessoaFisica pessoafisica = db.PessoaFisicas.Find(id);
+            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
             if (pessoafisica == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace FSUsinagem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PessoaFisica pessoafisica = db.PessoaFisicas.Find(id);
-            db.PessoaFisicas.Remove(pessoafisica);
+            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
+            db.PessoasFisicas.Remove(pessoafisica);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

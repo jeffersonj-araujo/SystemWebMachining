@@ -18,7 +18,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Index()
         {
-            return View(db.CodigoDeOperacaos.ToList());
+            return View(db.CodigosDeOperacao.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            CodigoDeOperacao codigodeoperacao = db.CodigoDeOperacaos.Find(id);
+            CodigoDeOperacao codigodeoperacao = db.CodigosDeOperacao.Find(id);
             if (codigodeoperacao == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace FSUsinagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.CodigoDeOperacaos.Add(codigodeoperacao);
+                db.CodigosDeOperacao.Add(codigodeoperacao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            CodigoDeOperacao codigodeoperacao = db.CodigoDeOperacaos.Find(id);
+            CodigoDeOperacao codigodeoperacao = db.CodigosDeOperacao.Find(id);
             if (codigodeoperacao == null)
             {
                 return HttpNotFound();
@@ -93,7 +93,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            CodigoDeOperacao codigodeoperacao = db.CodigoDeOperacaos.Find(id);
+            CodigoDeOperacao codigodeoperacao = db.CodigosDeOperacao.Find(id);
             if (codigodeoperacao == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace FSUsinagem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CodigoDeOperacao codigodeoperacao = db.CodigoDeOperacaos.Find(id);
-            db.CodigoDeOperacaos.Remove(codigodeoperacao);
+            CodigoDeOperacao codigodeoperacao = db.CodigosDeOperacao.Find(id);
+            db.CodigosDeOperacao.Remove(codigodeoperacao);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

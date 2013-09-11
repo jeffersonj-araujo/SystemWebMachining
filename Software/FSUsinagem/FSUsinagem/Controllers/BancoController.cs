@@ -18,7 +18,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Bancoes.ToList());
+            return View(db.Bancos.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Banco banco = db.Bancoes.Find(id);
+            Banco banco = db.Bancos.Find(id);
             if (banco == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace FSUsinagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Bancoes.Add(banco);
+                db.Bancos.Add(banco);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Banco banco = db.Bancoes.Find(id);
+            Banco banco = db.Bancos.Find(id);
             if (banco == null)
             {
                 return HttpNotFound();
@@ -93,7 +93,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Banco banco = db.Bancoes.Find(id);
+            Banco banco = db.Bancos.Find(id);
             if (banco == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace FSUsinagem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Banco banco = db.Bancoes.Find(id);
-            db.Bancoes.Remove(banco);
+            Banco banco = db.Bancos.Find(id);
+            db.Bancos.Remove(banco);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

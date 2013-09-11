@@ -7,7 +7,7 @@ using System.Web;
 
 namespace FSUsinagem.Models
 {
-    [Table("Banco")]
+    [Table("Bancos")]
     public class Banco
     {
         [Key]

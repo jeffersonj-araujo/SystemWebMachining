@@ -18,7 +18,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Index()
         {
-            return View(db.EstadoDoPedidoes.ToList());
+            return View(db.EstadosDePedido.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            EstadoDoPedido estadodopedido = db.EstadoDoPedidoes.Find(id);
+            EstadoDoPedido estadodopedido = db.EstadosDePedido.Find(id);
             if (estadodopedido == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace FSUsinagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.EstadoDoPedidoes.Add(estadodopedido);
+                db.EstadosDePedido.Add(estadodopedido);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            EstadoDoPedido estadodopedido = db.EstadoDoPedidoes.Find(id);
+            EstadoDoPedido estadodopedido = db.EstadosDePedido.Find(id);
             if (estadodopedido == null)
             {
                 return HttpNotFound();
@@ -93,7 +93,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            EstadoDoPedido estadodopedido = db.EstadoDoPedidoes.Find(id);
+            EstadoDoPedido estadodopedido = db.EstadosDePedido.Find(id);
             if (estadodopedido == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace FSUsinagem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EstadoDoPedido estadodopedido = db.EstadoDoPedidoes.Find(id);
-            db.EstadoDoPedidoes.Remove(estadodopedido);
+            EstadoDoPedido estadodopedido = db.EstadosDePedido.Find(id);
+            db.EstadosDePedido.Remove(estadodopedido);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

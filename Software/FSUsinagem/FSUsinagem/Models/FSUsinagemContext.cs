@@ -13,18 +13,19 @@ namespace FSUsinagem.Models
         {
         }
 
-        public DbSet<TipoDeProduto> TiposDeProduto { get; set; }
         public DbSet<TodoItem> TodoItems { get; set; }
         public DbSet<TodoList> TodoLists { get; set; }
 
-        public DbSet<Produto> Produtoes { get; set; }
+        public DbSet<TipoDeProduto> TiposDeProduto { get; set; }
 
-        public DbSet<PessoaFisica> PessoaFisicas { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
 
-        public DbSet<Banco> Bancoes { get; set; }
+        public DbSet<PessoaFisica> PessoasFisicas { get; set; }
 
-        public DbSet<EstadoDoPedido> EstadoDoPedidoes { get; set; }
+        public DbSet<Banco> Bancos { get; set; }
 
-        public DbSet<CodigoDeOperacao> CodigoDeOperacaos { get; set; }
+        public DbSet<EstadoDoPedido> EstadosDePedido { get; set; }
+
+        public DbSet<CodigoDeOperacao> CodigosDeOperacao { get; set; }
     }
 }

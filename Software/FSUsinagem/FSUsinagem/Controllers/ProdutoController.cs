@@ -18,7 +18,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Index()
         {
-            var produtoes = db.Produtoes.Include(p => p.TipoDeProduto);
+            var produtoes = db.Produtos.Include(p => p.TipoDeProduto);
             return View(produtoes.ToList());
         }
 
@@ -27,7 +27,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            Produto produto = db.Produtoes.Find(id);
+            Produto produto = db.Produtos.Find(id);
             if (produto == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace FSUsinagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Produtoes.Add(produto);
+                db.Produtos.Add(produto);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -67,7 +67,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Produto produto = db.Produtoes.Find(id);
+            Produto produto = db.Produtos.Find(id);
             if (produto == null)
             {
                 return HttpNotFound();
@@ -98,7 +98,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            Produto produto = db.Produtoes.Find(id);
+            Produto produto = db.Produtos.Find(id);
             if (produto == null)
             {
                 return HttpNotFound();
@@ -113,8 +113,8 @@ namespace FSUsinagem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Produto produto = db.Produtoes.Find(id);
-            db.Produtoes.Remove(produto);
+            Produto produto = db.Produtos.Find(id);
+            db.Produtos.Remove(produto);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
