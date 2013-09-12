@@ -206,6 +206,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PessoaFisicaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
+    <Compile Include="Controllers\TipoDeCadastroController.cs" />
+    <Compile Include="Controllers\TipoDeEnderecoController.cs" />
     <Compile Include="Controllers\TipoDeProdutoController.cs" />
     <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Controllers\TodoListController.cs" />
@@ -217,11 +219,15 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Banco.cs" />
     <Compile Include="Models\CodigoDeOperacao.cs" />
+    <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\EstadoDoPedido.cs" />
     <Compile Include="Models\FSUsinagemContext.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
+    <Compile Include="Models\PessoaFisicaDto.cs" />
     <Compile Include="Models\Produto.cs" />
+    <Compile Include="Models\TipoDeCadastro.cs" />
+    <Compile Include="Models\TipoDeEndereco.cs" />
     <Compile Include="Models\TipoDeProduto.cs" />
     <Compile Include="Models\TodoItemDto.cs" />
     <Compile Include="Models\TodoListDto.cs" />
@@ -367,11 +373,6 @@
     <Content Include="Views\Produto\Create.cshtml" />
     <Content Include="Views\Produto\Edit.cshtml" />
     <Content Include="Views\Produto\Delete.cshtml" />
-    <Content Include="Views\PessoaFisica\Index.cshtml" />
-    <Content Include="Views\PessoaFisica\Details.cshtml" />
-    <Content Include="Views\PessoaFisica\Create.cshtml" />
-    <Content Include="Views\PessoaFisica\Edit.cshtml" />
-    <Content Include="Views\PessoaFisica\Delete.cshtml" />
     <Content Include="Views\Banco\Index.cshtml" />
     <Content Include="Views\Banco\Details.cshtml" />
     <Content Include="Views\Banco\Create.cshtml" />
@@ -387,6 +388,18 @@
     <Content Include="Views\CodigoDeOperacao\Create.cshtml" />
     <Content Include="Views\CodigoDeOperacao\Edit.cshtml" />
     <Content Include="Views\CodigoDeOperacao\Delete.cshtml" />
+    <Content Include="Views\TipoDeCadastro\Index.cshtml" />
+    <Content Include="Views\TipoDeCadastro\Details.cshtml" />
+    <Content Include="Views\TipoDeCadastro\Create.cshtml" />
+    <Content Include="Views\TipoDeCadastro\Edit.cshtml" />
+    <Content Include="Views\TipoDeCadastro\Delete.cshtml" />
+    <Content Include="Views\TipoDeEndereco\Index.cshtml" />
+    <Content Include="Views\TipoDeEndereco\Details.cshtml" />
+    <Content Include="Views\TipoDeEndereco\Create.cshtml" />
+    <Content Include="Views\TipoDeEndereco\Edit.cshtml" />
+    <Content Include="Views\TipoDeEndereco\Delete.cshtml" />
+    <Content Include="Views\PessoaFisica\Index.cshtml" />
+    <Content Include="Views\PessoaFisica\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

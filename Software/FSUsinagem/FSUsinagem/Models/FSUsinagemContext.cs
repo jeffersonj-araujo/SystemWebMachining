@@ -27,5 +27,9 @@ namespace FSUsinagem.Models
         public DbSet<EstadoDoPedido> EstadosDePedido { get; set; }
 
         public DbSet<CodigoDeOperacao> CodigosDeOperacao { get; set; }
+
+        public DbSet<TipoDeCadastro> TiposDeCadastro { get; set; }
+
+        public DbSet<TipoDeEndereco> TipoDeEnderecoes { get; set; }
     }
 }

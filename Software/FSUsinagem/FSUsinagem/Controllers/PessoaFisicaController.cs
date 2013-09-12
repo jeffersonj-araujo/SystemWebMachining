@@ -1,37 +1,31 @@
-﻿using System;
+﻿using FSUsinagem.Models;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using FSUsinagem.Models;
 
 namespace FSUsinagem.Controllers
 {
     public class PessoaFisicaController : Controller
     {
         private FSUsinagemContext db = new FSUsinagemContext();
-
         //
         // GET: /PessoaFisica/
 
         public ActionResult Index()
         {
-            return View(db.PessoasFisicas.ToList());
+            var Lista = new List<PessoaFisicaDto>();
+            db.PessoasFisicas.ToList().ForEach(p => Lista.Add(new PessoaFisicaDto(p)));
+            return View(Lista);
         }
 
         //
         // GET: /PessoaFisica/Details/5
 
-        public ActionResult Details(int id = 0)
+        public ActionResult Details(int id)
         {
-            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
-            if (pessoafisica == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pessoafisica);
+            return View();
         }
 
         //
@@ -39,6 +33,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.TipoDeCadastroId = new SelectList(db.TiposDeCadastro, "TipoDeCadastroId", "Descricao");
             return View();
         }
 
@@ -46,72 +41,68 @@ namespace FSUsinagem.Controllers
         // POST: /PessoaFisica/Create
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(PessoaFisica pessoafisica)
+        public ActionResult Create(PessoaFisicaDto pessoaFisicaDto)
         {
             if (ModelState.IsValid)
             {
-                db.PessoasFisicas.Add(pessoafisica);
+                db.PessoasFisicas.Add(pessoaFisicaDto.ToEntity());
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(pessoafisica);
+            return View(pessoaFisicaDto);
         }
 
         //
         // GET: /PessoaFisica/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        public ActionResult Edit(int id)
         {
-            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
-            if (pessoafisica == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pessoafisica);
+            return View();
         }
 
         //
         // POST: /PessoaFisica/Edit/5
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(PessoaFisica pessoafisica)
+        public ActionResult Edit(int id, FormCollection collection)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(pessoafisica).State = EntityState.Modified;
-                db.SaveChanges();
+                // TODO: Add update logic here
+
                 return RedirectToAction("Index");
             }
-            return View(pessoafisica);
+            catch
+            {
+                return View();
+            }
         }
 
         //
         // GET: /PessoaFisica/Delete/5
 
-        public ActionResult Delete(int id = 0)
+        public ActionResult Delete(int id)
         {
-            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
-            if (pessoafisica == null)
-            {
-                return HttpNotFound();
-            }
-            return View(pessoafisica);
+            return View();
         }
 
         //
         // POST: /PessoaFisica/Delete/5
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
         {
-            PessoaFisica pessoafisica = db.PessoasFisicas.Find(id);
-            db.PessoasFisicas.Remove(pessoafisica);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         protected override void Dispose(bool disposing)
