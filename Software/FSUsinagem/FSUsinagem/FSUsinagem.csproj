@@ -400,6 +400,8 @@
     <Content Include="Views\TipoDeEndereco\Delete.cshtml" />
     <Content Include="Views\PessoaFisica\Index.cshtml" />
     <Content Include="Views\PessoaFisica\Create.cshtml" />
+    <Content Include="Views\PessoaFisica\Edit.cshtml" />
+    <Content Include="Views\PessoaFisica\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

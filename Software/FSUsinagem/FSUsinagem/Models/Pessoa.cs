@@ -31,31 +31,50 @@ namespace FSUsinagem.Models
 
         public virtual List<Endereco> Enderecos { get; set; }
 
+        private List<Endereco> EnderecosValido()
+        {
+            if (Enderecos == null)
+                Enderecos = new List<Endereco>();
+            return Enderecos;
+        }
+
         //Método
         public Endereco EnderecoPrincipal()
         {
             Endereco enderecoPrincipal;
-            enderecoPrincipal = Enderecos.Find(e => e.TipoDeEndereco.Descricao == "Principal");
+            enderecoPrincipal = EnderecosValido().Find(e => e.TipoDeEnderecoId == TipoDeEndereco.TipoDeEnderecoPrincipal.TipoDeEnderecoId);
             if (enderecoPrincipal == null)
+            {
                 enderecoPrincipal = new Endereco();
+                enderecoPrincipal.TipoDeEnderecoId = TipoDeEndereco.TipoDeEnderecoPrincipal.TipoDeEnderecoId;
+                Enderecos.Add(enderecoPrincipal);
+            }
             return enderecoPrincipal;
         }
 
         public Endereco EnderecoCobranca()
         {
             Endereco enderecoCobranca;
-            enderecoCobranca = Enderecos.Find(e => e.TipoDeEndereco.Descricao == "Cobrança");
+            enderecoCobranca = EnderecosValido().Find(e => e.TipoDeEnderecoId == TipoDeEndereco.TipoDeEnderecoCobranca.TipoDeEnderecoId);
             if (enderecoCobranca == null)
+            {
                 enderecoCobranca = new Endereco();
+                enderecoCobranca.TipoDeEnderecoId = TipoDeEndereco.TipoDeEnderecoCobranca.TipoDeEnderecoId;
+                Enderecos.Add(enderecoCobranca);
+            }
             return enderecoCobranca;
         }
 
         public Endereco EnderecoEntrega()
         {
             Endereco enderecoEntrega;
-            enderecoEntrega = Enderecos.Find(e => e.TipoDeEndereco.Descricao == "Entrega");
+            enderecoEntrega = EnderecosValido().Find(e => e.TipoDeEnderecoId == TipoDeEndereco.TipoDeEnderecoEntrega.TipoDeEnderecoId);
             if (enderecoEntrega == null)
+            {
                 enderecoEntrega = new Endereco();
+                enderecoEntrega.TipoDeEnderecoId = TipoDeEndereco.TipoDeEnderecoEntrega.TipoDeEnderecoId;
+                Enderecos.Add(enderecoEntrega);
+            }
             return enderecoEntrega;
         }
     }

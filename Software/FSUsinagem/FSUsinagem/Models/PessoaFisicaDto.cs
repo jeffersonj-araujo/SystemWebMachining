@@ -133,68 +133,55 @@ namespace FSUsinagem.Models
 
         public string EnderecoEntregaUf { get; set; }
 
+        public void AssignTo(PessoaFisica pessoaFisica)
+        {
+            pessoaFisica.PessoaId = PessoaId;
+            pessoaFisica.Cpf = Cpf;
+            pessoaFisica.Nome = Nome;
+            pessoaFisica.Email = Email;
+            pessoaFisica.Fone = Fone;
+            pessoaFisica.Fax = Fax;
+            pessoaFisica.Celular = Celular;
+            pessoaFisica.Rg = Rg;
+            pessoaFisica.OrgaoExpedidor = OrgaoExpedidor;
+            pessoaFisica.DataDeNascimento = DataDeNascimento;
+            pessoaFisica.TipoDeCadastroId = TipoDeCadastroId;
+
+            Endereco enderecoPrincipal = pessoaFisica.EnderecoPrincipal();
+            enderecoPrincipal.Cep = EnderecoPrincipalCep;
+            enderecoPrincipal.TipoDeLogradouro = EnderecoPrincipalTipoDeLogradouro;
+            enderecoPrincipal.Logradouro = EnderecoPrincipalLogradouro;
+            enderecoPrincipal.Numero = EnderecoPrincipalNumero;
+            enderecoPrincipal.Complemento = EnderecoPrincipalComplemento;
+            enderecoPrincipal.Bairro = EnderecoPrincipalBairro;
+            enderecoPrincipal.Municipio = EnderecoPrincipalMunicipio;
+            enderecoPrincipal.Uf = EnderecoPrincipalUf;
+
+            Endereco enderecoCobranca = pessoaFisica.EnderecoCobranca();
+            enderecoCobranca.Cep = EnderecoCobrancaCep;
+            enderecoCobranca.TipoDeLogradouro = EnderecoCobrancaTipoDeLogradouro;
+            enderecoCobranca.Logradouro = EnderecoCobrancaLogradouro;
+            enderecoCobranca.Numero = EnderecoCobrancaNumero;
+            enderecoCobranca.Complemento = EnderecoCobrancaComplemento;
+            enderecoCobranca.Bairro = EnderecoCobrancaBairro;
+            enderecoCobranca.Municipio = EnderecoCobrancaMunicipio;
+            enderecoCobranca.Uf = EnderecoCobrancaUf;
+
+            Endereco enderecoEntrega = pessoaFisica.EnderecoEntrega();
+            enderecoEntrega.Cep = EnderecoEntregaCep;
+            enderecoEntrega.TipoDeLogradouro = EnderecoEntregaTipoDeLogradouro;
+            enderecoEntrega.Logradouro = EnderecoEntregaLogradouro;
+            enderecoEntrega.Numero = EnderecoEntregaNumero;
+            enderecoEntrega.Complemento = EnderecoEntregaComplemento;
+            enderecoEntrega.Bairro = EnderecoEntregaBairro;
+            enderecoEntrega.Municipio = EnderecoEntregaMunicipio;
+            enderecoEntrega.Uf = EnderecoEntregaUf;
+        }
+
         public PessoaFisica ToEntity()
         {
-            PessoaFisica pessoaFisica = new PessoaFisica
-            {
-                PessoaId = PessoaId,
-                Cpf = Cpf,
-                Nome = Nome,
-                Email = Email,
-                Fone = Fone,
-                Fax = Fax,
-                Celular = Celular,
-                Rg = Rg,
-                OrgaoExpedidor = OrgaoExpedidor,
-                DataDeNascimento = DataDeNascimento,
-                TipoDeCadastroId = TipoDeCadastroId
-            };
-
-            Endereco enderecoPrincipal = new Endereco
-            {
-                Cep = EnderecoPrincipalCep,
-                TipoDeLogradouro = EnderecoPrincipalTipoDeLogradouro,
-                Logradouro = EnderecoPrincipalLogradouro,
-                Numero = EnderecoPrincipalNumero,
-                Complemento = EnderecoPrincipalComplemento,
-                Bairro = EnderecoPrincipalBairro,
-                Municipio = EnderecoPrincipalMunicipio,
-                Uf = EnderecoPrincipalUf,
-                TipoDeEndereco = new TipoDeEndereco { Descricao = "Principal" }
-            };
-
-            Endereco enderecoCobranca = new Endereco
-            {
-                Cep = EnderecoCobrancaCep,
-                TipoDeLogradouro = EnderecoCobrancaTipoDeLogradouro,
-                Logradouro = EnderecoCobrancaLogradouro,
-                Numero = EnderecoCobrancaNumero,
-                Complemento = EnderecoCobrancaComplemento,
-                Bairro = EnderecoCobrancaBairro,
-                Municipio = EnderecoCobrancaMunicipio,
-                Uf = EnderecoCobrancaUf,
-                TipoDeEndereco = new TipoDeEndereco { Descricao = "Cobrança" }
-            };
-
-            Endereco enderecoEntrega = new Endereco
-            {
-                Cep = EnderecoEntregaCep,
-                TipoDeLogradouro = EnderecoEntregaTipoDeLogradouro,
-                Logradouro = EnderecoEntregaLogradouro,
-                Numero = EnderecoEntregaNumero,
-                Complemento = EnderecoEntregaComplemento,
-                Bairro = EnderecoEntregaBairro,
-                Municipio = EnderecoEntregaMunicipio,
-                Uf = EnderecoEntregaUf,
-                TipoDeEndereco = new TipoDeEndereco { Descricao = "Entrega" }
-            };
-
-            pessoaFisica.Enderecos = new List<Endereco>();
-
-            pessoaFisica.Enderecos.Add(enderecoPrincipal);
-            pessoaFisica.Enderecos.Add(enderecoCobranca);
-            pessoaFisica.Enderecos.Add(enderecoEntrega);
-
+            PessoaFisica pessoaFisica = new PessoaFisica();
+            AssignTo(pessoaFisica);
             return pessoaFisica;
         }
     }

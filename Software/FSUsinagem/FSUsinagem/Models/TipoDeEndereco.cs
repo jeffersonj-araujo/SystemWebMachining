@@ -10,8 +10,16 @@ namespace FSUsinagem.Models
     [Table("TiposDeEndereco")]
     public class TipoDeEndereco
     {
+        public TipoDeEndereco() { }
+
+        public TipoDeEndereco(TipoDeEndereco tipoDeEndereco)
+        {
+            TipoDeEnderecoId = tipoDeEndereco.TipoDeEnderecoId;
+            Descricao = tipoDeEndereco.Descricao;
+        }
+
         [Key]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None)]
         public int TipoDeEnderecoId { get; set; }
 
         [Required]
@@ -19,5 +27,23 @@ namespace FSUsinagem.Models
         public string Descricao { get; set; }
 
         public virtual List<Endereco> Enderecos { get; set; }
+
+        static public TipoDeEndereco TipoDeEnderecoPrincipal = new TipoDeEndereco
+        {
+            TipoDeEnderecoId = 1,
+            Descricao = "Principal"
+        };
+
+        static public TipoDeEndereco TipoDeEnderecoCobranca = new TipoDeEndereco
+        {
+            TipoDeEnderecoId = 2,
+            Descricao = "Cobrança"
+        };
+
+        static public TipoDeEndereco TipoDeEnderecoEntrega = new TipoDeEndereco
+        {
+            TipoDeEnderecoId = 3,
+            Descricao = "Entrega"
+        };
     }
 }

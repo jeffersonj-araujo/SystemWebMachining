@@ -30,6 +30,6 @@ namespace FSUsinagem.Models
 
         public DbSet<TipoDeCadastro> TiposDeCadastro { get; set; }
 
-        public DbSet<TipoDeEndereco> TipoDeEnderecoes { get; set; }
+        public DbSet<TipoDeEndereco> TiposDeEndereco { get; set; }
     }
 }

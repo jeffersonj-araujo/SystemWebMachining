@@ -18,7 +18,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Index()
         {
-            return View(db.TipoDeEnderecoes.ToList());
+            return View(db.TiposDeEndereco.ToList());
         }
 
         //
@@ -26,7 +26,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Details(int id = 0)
         {
-            TipoDeEndereco tipodeendereco = db.TipoDeEnderecoes.Find(id);
+            TipoDeEndereco tipodeendereco = db.TiposDeEndereco.Find(id);
             if (tipodeendereco == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace FSUsinagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.TipoDeEnderecoes.Add(tipodeendereco);
+                db.TiposDeEndereco.Add(tipodeendereco);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -64,7 +64,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            TipoDeEndereco tipodeendereco = db.TipoDeEnderecoes.Find(id);
+            TipoDeEndereco tipodeendereco = db.TiposDeEndereco.Find(id);
             if (tipodeendereco == null)
             {
                 return HttpNotFound();
@@ -93,7 +93,7 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            TipoDeEndereco tipodeendereco = db.TipoDeEnderecoes.Find(id);
+            TipoDeEndereco tipodeendereco = db.TiposDeEndereco.Find(id);
             if (tipodeendereco == null)
             {
                 return HttpNotFound();
@@ -108,8 +108,8 @@ namespace FSUsinagem.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TipoDeEndereco tipodeendereco = db.TipoDeEnderecoes.Find(id);
-            db.TipoDeEnderecoes.Remove(tipodeendereco);
+            TipoDeEndereco tipodeendereco = db.TiposDeEndereco.Find(id);
+            db.TiposDeEndereco.Remove(tipodeendereco);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

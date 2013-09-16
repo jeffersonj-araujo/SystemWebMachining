@@ -1,6 +1,7 @@
 ﻿using FSUsinagem.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -10,8 +11,25 @@ namespace FSUsinagem.Controllers
     public class PessoaFisicaController : Controller
     {
         private FSUsinagemContext db = new FSUsinagemContext();
-        //
-        // GET: /PessoaFisica/
+
+        private void AjustaTipoEndereco(PessoaFisica pessoaFisica)
+        {
+            TipoDeEndereco tipoEnderecoPrincipal = db.TiposDeEndereco.Find(TipoDeEndereco.TipoDeEnderecoPrincipal.TipoDeEnderecoId);
+            if (tipoEnderecoPrincipal == null)
+                tipoEnderecoPrincipal = new TipoDeEndereco(TipoDeEndereco.TipoDeEnderecoPrincipal);
+
+            TipoDeEndereco tipoEnderecoCobranca = db.TiposDeEndereco.FirstOrDefault(t => t.TipoDeEnderecoId == 2);
+            if (tipoEnderecoCobranca == null)
+                tipoEnderecoCobranca = new TipoDeEndereco(TipoDeEndereco.TipoDeEnderecoCobranca);
+
+            TipoDeEndereco tipoEnderecoEntrega = db.TiposDeEndereco.FirstOrDefault(t => t.TipoDeEnderecoId == 3);
+            if (tipoEnderecoEntrega == null)
+                tipoEnderecoEntrega = new TipoDeEndereco(TipoDeEndereco.TipoDeEnderecoEntrega);
+
+            pessoaFisica.EnderecoPrincipal().TipoDeEndereco = tipoEnderecoPrincipal;
+            pessoaFisica.EnderecoCobranca().TipoDeEndereco = tipoEnderecoCobranca;
+            pessoaFisica.EnderecoEntrega().TipoDeEndereco = tipoEnderecoEntrega;
+        }
 
         public ActionResult Index()
         {
@@ -45,7 +63,9 @@ namespace FSUsinagem.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.PessoasFisicas.Add(pessoaFisicaDto.ToEntity());
+                PessoaFisica pf = pessoaFisicaDto.ToEntity();
+                AjustaTipoEndereco(pf);
+                db.PessoasFisicas.Add(pf);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -58,51 +78,59 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            PessoaFisica pessoaFisica = db.PessoasFisicas.Find(id);
+            if (pessoaFisica == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.TipoDeCadastroId = new SelectList(db.TiposDeCadastro, "TipoDeCadastroId", "Descricao", pessoaFisica.TipoDeCadastroId);
+            return View(new PessoaFisicaDto(pessoaFisica));
         }
 
         //
         // POST: /PessoaFisica/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(PessoaFisicaDto pessoaFisicaDto)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                PessoaFisica pf = db.PessoasFisicas.Find(pessoaFisicaDto.PessoaId);
+                pessoaFisicaDto.AssignTo(pf);
+                db.Entry(pf).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            ViewBag.TipoDeCadastroId = new SelectList(db.TiposDeCadastro, "TipoDeCadastroId", "Descricao", pessoaFisicaDto.TipoDeCadastroId);
+            return View(pessoaFisicaDto);
         }
 
         //
         // GET: /PessoaFisica/Delete/5
 
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id = 0)
         {
-            return View();
+            PessoaFisica pessoaFisica = db.PessoasFisicas.Find(id);
+            if (pessoaFisica == null)
+            {
+                return HttpNotFound();
+            }
+            return View(new PessoaFisicaDto(pessoaFisica));
         }
 
         //
         // POST: /PessoaFisica/Delete/5
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            PessoaFisica pessoaFisica = db.PessoasFisicas.Find(id);
+            pessoaFisica.Enderecos.Clear();
+            db.PessoasFisicas.Remove(pessoaFisica);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
