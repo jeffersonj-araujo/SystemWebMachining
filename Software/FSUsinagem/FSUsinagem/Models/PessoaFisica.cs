@@ -12,16 +12,12 @@ namespace FSUsinagem.Models
     {
 
         [Required]
-        [Display(Name = "CPF")]
         public string Cpf { get; set; }
 
-        [Display(Name = "RG")]
         public string Rg { get; set; }
 
-        [Display(Name = "Orgão Expedidor")]
         public string OrgaoExpedidor { get; set; }
 
-        [Display(Name = "Data de Nascimento")]
         public DateTime? DataDeNascimento { get; set; }
 
     }

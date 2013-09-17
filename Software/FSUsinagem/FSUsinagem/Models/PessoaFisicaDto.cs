@@ -65,6 +65,7 @@ namespace FSUsinagem.Models
         [Required]
         public string Nome { get; set; }
 
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
         public string Fone { get; set; }
@@ -85,52 +86,76 @@ namespace FSUsinagem.Models
         [Display(Name = "Data de Nascimento")]
         public DateTime? DataDeNascimento { get; set; }
 
+        [Display(Name = "CEP")]
         public string EnderecoPrincipalCep { get; set; }
 
+        [Display(Name = "Logradouro")]
         public string EnderecoPrincipalTipoDeLogradouro { get; set; }
 
+        [Display(Name = "Endereço")]
         public string EnderecoPrincipalLogradouro { get; set; }
 
+        [Display(Name = "Número")]
         public string EnderecoPrincipalNumero { get; set; }
 
+        [Display(Name = "Complemento")]
         public string EnderecoPrincipalComplemento { get; set; }
 
+        [Display(Name = "Bairro")]
         public string EnderecoPrincipalBairro { get; set; }
 
+        [Display(Name = "Cidade")]
         public string EnderecoPrincipalMunicipio { get; set; }
 
+        [Display(Name = "Estado")]
         public string EnderecoPrincipalUf { get; set; }
 
+        [Display(Name = "CEP")]
         public string EnderecoCobrancaCep { get; set; }
 
+        [Display(Name = "Logradouro")]
         public string EnderecoCobrancaTipoDeLogradouro { get; set; }
 
+        [Display(Name = "Endereço")]
         public string EnderecoCobrancaLogradouro { get; set; }
 
+        [Display(Name = "Número")]
         public string EnderecoCobrancaNumero { get; set; }
 
+        [Display(Name = "Complemento")]
         public string EnderecoCobrancaComplemento { get; set; }
 
+        [Display(Name = "Bairro")]
         public string EnderecoCobrancaBairro { get; set; }
 
+        [Display(Name = "Cidade")]
         public string EnderecoCobrancaMunicipio { get; set; }
 
+        [Display(Name = "Estado")]
         public string EnderecoCobrancaUf { get; set; }
 
+        [Display(Name = "CEP")]
         public string EnderecoEntregaCep { get; set; }
 
+        [Display(Name = "Logradouro")]
         public string EnderecoEntregaTipoDeLogradouro { get; set; }
 
+        [Display(Name = "Endereço")]
         public string EnderecoEntregaLogradouro { get; set; }
 
+        [Display(Name = "Número")]
         public string EnderecoEntregaNumero { get; set; }
 
+        [Display(Name = "Complemento")]
         public string EnderecoEntregaComplemento { get; set; }
 
+        [Display(Name = "Bairro")]
         public string EnderecoEntregaBairro { get; set; }
 
+        [Display(Name = "Cidade")]
         public string EnderecoEntregaMunicipio { get; set; }
 
+        [Display(Name = "Estado")]
         public string EnderecoEntregaUf { get; set; }
 
         public void AssignTo(PessoaFisica pessoaFisica)

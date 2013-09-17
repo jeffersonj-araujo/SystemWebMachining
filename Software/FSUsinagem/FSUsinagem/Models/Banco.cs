@@ -15,11 +15,11 @@ namespace FSUsinagem.Models
         public int BancoId { get; set; }
 
         [Required]
-        [Display(Name = "Código Do Banco")]
+        [Display(Name = "Código do Banco")]
         public string Codigo { get; set; }
 
         [Required]
-        [Display(Name = "Nome Do Banco")]
+        [Display(Name = "Nome do Banco")]
         public string Descricao { get; set; }
 
         [Required]
@@ -30,10 +30,10 @@ namespace FSUsinagem.Models
         [Display(Name = "Conta Corrente")]
         public string ContaCorrente { get; set; }
 
-        [Display(Name = "Saldo Do Banco")]
+        [Display(Name = "Saldo do Banco")]
         public decimal? SaldoDoBanco { get; set; }
 
-        [Display(Name = "Data Do Saldo")]
+        [Display(Name = "Data do Saldo")]
         public DateTime? DataDoSaldo { get; set; }
 
     }
