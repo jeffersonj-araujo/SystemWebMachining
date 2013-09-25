@@ -35,6 +35,5 @@ namespace FSUsinagem.Models
 
         [Display(Name = "Data do Saldo")]
         public DateTime? DataDoSaldo { get; set; }
-
     }
 }

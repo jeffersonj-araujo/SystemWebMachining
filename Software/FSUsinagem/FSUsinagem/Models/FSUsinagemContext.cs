@@ -14,6 +14,7 @@ namespace FSUsinagem.Models
         }
 
         public DbSet<TodoItem> TodoItems { get; set; }
+
         public DbSet<TodoList> TodoLists { get; set; }
 
         public DbSet<TipoDeProduto> TiposDeProduto { get; set; }
@@ -21,6 +22,8 @@ namespace FSUsinagem.Models
         public DbSet<Produto> Produtos { get; set; }
 
         public DbSet<PessoaFisica> PessoasFisicas { get; set; }
+
+        public DbSet<PessoaJuridica> PessoasJuridicas { get; set; }
 
         public DbSet<Banco> Bancos { get; set; }
 

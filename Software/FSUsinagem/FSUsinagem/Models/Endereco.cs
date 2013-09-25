@@ -33,6 +33,5 @@ namespace FSUsinagem.Models
         [ForeignKey("TipoDeEndereco")]
         public int TipoDeEnderecoId { get; set; }
         public virtual TipoDeEndereco TipoDeEndereco { get; set; }
-
     }
 }

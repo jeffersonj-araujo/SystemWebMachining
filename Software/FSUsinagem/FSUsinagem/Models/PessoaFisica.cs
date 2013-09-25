@@ -10,7 +10,6 @@ namespace FSUsinagem.Models
     [Table("PessoasFisica")]
     public class PessoaFisica : Pessoa
     {
-
         [Required]
         public string Cpf { get; set; }
 
@@ -19,6 +18,5 @@ namespace FSUsinagem.Models
         public string OrgaoExpedidor { get; set; }
 
         public DateTime? DataDeNascimento { get; set; }
-
     }
 }

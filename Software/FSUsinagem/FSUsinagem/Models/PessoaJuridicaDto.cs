@@ -6,25 +6,25 @@ using System.Web;
 
 namespace FSUsinagem.Models
 {
-    public class PessoaFisicaDto
+    public class PessoaJuridicaDto
     {
-        public PessoaFisicaDto() { }
+        public PessoaJuridicaDto() { }
         //Construtor
-        public PessoaFisicaDto(PessoaFisica pessoaFisica)
+        public PessoaJuridicaDto(PessoaJuridica pessoaJuridica)
         {
-            PessoaId = pessoaFisica.PessoaId;
-            Cpf = pessoaFisica.Cpf;
-            Nome = pessoaFisica.Nome;
-            Email = pessoaFisica.Email;
-            Fone = pessoaFisica.Fone;
-            Fax = pessoaFisica.Fax;
-            Celular = pessoaFisica.Celular;
-            Rg = pessoaFisica.Rg;
-            OrgaoExpedidor = pessoaFisica.OrgaoExpedidor;
-            DataDeNascimento = pessoaFisica.DataDeNascimento;
-            TipoDeCadastroId = pessoaFisica.TipoDeCadastroId;
+            PessoaId = pessoaJuridica.PessoaId;
+            Cnpj = pessoaJuridica.Cnpj;
+            Nome = pessoaJuridica.Nome;
+            Email = pessoaJuridica.Email;
+            Fone = pessoaJuridica.Fone;
+            Fax = pessoaJuridica.Fax;
+            Celular = pessoaJuridica.Celular;
+            Contato = pessoaJuridica.Contato;
+            InscricaoMunicipal = pessoaJuridica.InscricaoMunicipal;
+            InscricaoEstadual = pessoaJuridica.InscricaoEstadual;
+            TipoDeCadastroId = pessoaJuridica.TipoDeCadastroId;
 
-            Endereco enderecoPrincipal = pessoaFisica.EnderecoPrincipal();
+            Endereco enderecoPrincipal = pessoaJuridica.EnderecoPrincipal();
             EnderecoPrincipalCep = enderecoPrincipal.Cep;
             EnderecoPrincipalTipoDeLogradouro = enderecoPrincipal.TipoDeLogradouro;
             EnderecoPrincipalLogradouro = enderecoPrincipal.Logradouro;
@@ -34,7 +34,7 @@ namespace FSUsinagem.Models
             EnderecoPrincipalMunicipio = enderecoPrincipal.Municipio;
             EnderecoPrincipalUf = enderecoPrincipal.Uf;
 
-            Endereco enderecoCobranca = pessoaFisica.EnderecoCobranca();
+            Endereco enderecoCobranca = pessoaJuridica.EnderecoCobranca();
             EnderecoCobrancaCep = enderecoCobranca.Cep;
             EnderecoCobrancaTipoDeLogradouro = enderecoCobranca.TipoDeLogradouro;
             EnderecoCobrancaLogradouro = enderecoCobranca.Logradouro;
@@ -44,7 +44,7 @@ namespace FSUsinagem.Models
             EnderecoCobrancaMunicipio = enderecoCobranca.Municipio;
             EnderecoCobrancaUf = enderecoCobranca.Uf;
 
-            Endereco enderecoEntrega = pessoaFisica.EnderecoEntrega();
+            Endereco enderecoEntrega = pessoaJuridica.EnderecoEntrega();
             EnderecoEntregaCep = enderecoEntrega.Cep;
             EnderecoEntregaTipoDeLogradouro = enderecoEntrega.TipoDeLogradouro;
             EnderecoEntregaLogradouro = enderecoEntrega.Logradouro;
@@ -59,10 +59,11 @@ namespace FSUsinagem.Models
         public int PessoaId { get; set; }
 
         [Required]
-        [Display(Name = "CPF")]
-        public string Cpf { get; set; }
+        [Display(Name = "CNPJ")]
+        public string Cnpj { get; set; }
 
         [Required]
+        [Display(Name = "Razão Social")]
         public string Nome { get; set; }
 
         [Display(Name = "E-mail")]
@@ -76,14 +77,14 @@ namespace FSUsinagem.Models
 
         public int TipoDeCadastroId { get; set; }
 
-        [Display(Name = "RG")]
-        public string Rg { get; set; }
+        [Display(Name = "Contato")]
+        public string Contato { get; set; }
 
-        [Display(Name = "Orgão Expedidor")]
-        public string OrgaoExpedidor { get; set; }
+        [Display(Name = "Inscricão Municipal")]
+        public string InscricaoMunicipal { get; set; }
 
-        [Display(Name = "Data de Nascimento")]
-        public DateTime? DataDeNascimento { get; set; }
+        [Display(Name = "Inscricão Estadual")]
+        public string InscricaoEstadual { get; set; }
 
         [Display(Name = "CEP")]
         public string EnderecoPrincipalCep { get; set; }
@@ -157,21 +158,21 @@ namespace FSUsinagem.Models
         [Display(Name = "Estado")]
         public string EnderecoEntregaUf { get; set; }
 
-        public void AssignTo(PessoaFisica pessoaFisica)
+        public void AssignTo(PessoaJuridica pessoaJuridica)
         {
-            pessoaFisica.PessoaId = PessoaId;
-            pessoaFisica.Cpf = Cpf;
-            pessoaFisica.Nome = Nome;
-            pessoaFisica.Email = Email;
-            pessoaFisica.Fone = Fone;
-            pessoaFisica.Fax = Fax;
-            pessoaFisica.Celular = Celular;
-            pessoaFisica.Rg = Rg;
-            pessoaFisica.OrgaoExpedidor = OrgaoExpedidor;
-            pessoaFisica.DataDeNascimento = DataDeNascimento;
-            pessoaFisica.TipoDeCadastroId = TipoDeCadastroId;
+            pessoaJuridica.PessoaId = PessoaId;
+            pessoaJuridica.Cnpj = Cnpj;
+            pessoaJuridica.Nome = Nome;
+            pessoaJuridica.Email = Email;
+            pessoaJuridica.Fone = Fone;
+            pessoaJuridica.Fax = Fax;
+            pessoaJuridica.Celular = Celular;
+            pessoaJuridica.Contato = Contato;
+            pessoaJuridica.InscricaoMunicipal = InscricaoMunicipal;
+            pessoaJuridica.InscricaoEstadual = InscricaoEstadual;
+            pessoaJuridica.TipoDeCadastroId = TipoDeCadastroId;
 
-            Endereco enderecoPrincipal = pessoaFisica.EnderecoPrincipal();
+            Endereco enderecoPrincipal = pessoaJuridica.EnderecoPrincipal();
             enderecoPrincipal.Cep = EnderecoPrincipalCep;
             enderecoPrincipal.TipoDeLogradouro = EnderecoPrincipalTipoDeLogradouro;
             enderecoPrincipal.Logradouro = EnderecoPrincipalLogradouro;
@@ -181,7 +182,7 @@ namespace FSUsinagem.Models
             enderecoPrincipal.Municipio = EnderecoPrincipalMunicipio;
             enderecoPrincipal.Uf = EnderecoPrincipalUf;
 
-            Endereco enderecoCobranca = pessoaFisica.EnderecoCobranca();
+            Endereco enderecoCobranca = pessoaJuridica.EnderecoCobranca();
             enderecoCobranca.Cep = EnderecoCobrancaCep;
             enderecoCobranca.TipoDeLogradouro = EnderecoCobrancaTipoDeLogradouro;
             enderecoCobranca.Logradouro = EnderecoCobrancaLogradouro;
@@ -191,7 +192,7 @@ namespace FSUsinagem.Models
             enderecoCobranca.Municipio = EnderecoCobrancaMunicipio;
             enderecoCobranca.Uf = EnderecoCobrancaUf;
 
-            Endereco enderecoEntrega = pessoaFisica.EnderecoEntrega();
+            Endereco enderecoEntrega = pessoaJuridica.EnderecoEntrega();
             enderecoEntrega.Cep = EnderecoEntregaCep;
             enderecoEntrega.TipoDeLogradouro = EnderecoEntregaTipoDeLogradouro;
             enderecoEntrega.Logradouro = EnderecoEntregaLogradouro;
@@ -202,11 +203,11 @@ namespace FSUsinagem.Models
             enderecoEntrega.Uf = EnderecoEntregaUf;
         }
 
-        public PessoaFisica ToEntity()
+        public PessoaJuridica ToEntity()
         {
-            PessoaFisica pessoaFisica = new PessoaFisica();
-            AssignTo(pessoaFisica);
-            return pessoaFisica;
+            PessoaJuridica pessoaJuridica = new PessoaJuridica();
+            AssignTo(pessoaJuridica);
+            return pessoaJuridica;
         }
     }
 }

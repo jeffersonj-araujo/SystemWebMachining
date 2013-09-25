@@ -1,0 +1,231 @@
+﻿@model IEnumerable<FSUsinagem.Models.PessoaJuridicaDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoDeCadastroId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InscricaoMunicipal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InscricaoEstadual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalCep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalTipoDeLogradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalLogradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalNumero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalComplemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalBairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalMunicipio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoPrincipalUf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaCep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaTipoDeLogradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaLogradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaNumero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaComplemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaBairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaMunicipio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoCobrancaUf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaCep)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaTipoDeLogradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaLogradouro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaNumero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaComplemento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaBairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaMunicipio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnderecoEntregaUf)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoDeCadastroId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InscricaoMunicipal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InscricaoEstadual)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalCep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalTipoDeLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalNumero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalComplemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalBairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalMunicipio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoPrincipalUf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaCep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaTipoDeLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaNumero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaComplemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaBairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaMunicipio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoCobrancaUf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaCep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaTipoDeLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaLogradouro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaNumero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaComplemento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaBairro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaMunicipio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnderecoEntregaUf)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PessoaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PessoaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PessoaId })
+        </td>
+    </tr>
+}
+
+</table>

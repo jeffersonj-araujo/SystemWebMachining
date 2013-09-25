@@ -1,0 +1,257 @@
+﻿@model FSUsinagem.Models.PessoaJuridicaDto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>PessoaJuridicaDto</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cnpj)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cnpj)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Celular)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Celular)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoDeCadastroId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoDeCadastroId)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Contato)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Contato)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InscricaoMunicipal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InscricaoMunicipal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InscricaoEstadual)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InscricaoEstadual)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalCep)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalCep)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalTipoDeLogradouro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalTipoDeLogradouro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalLogradouro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalLogradouro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalNumero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalNumero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalComplemento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalComplemento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalBairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalBairro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalMunicipio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalMunicipio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoPrincipalUf)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoPrincipalUf)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaCep)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaCep)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaTipoDeLogradouro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaTipoDeLogradouro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaLogradouro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaLogradouro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaNumero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaNumero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaComplemento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaComplemento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaBairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaBairro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaMunicipio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaMunicipio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoCobrancaUf)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoCobrancaUf)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaCep)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaCep)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaTipoDeLogradouro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaTipoDeLogradouro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaLogradouro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaLogradouro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaNumero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaNumero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaComplemento)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaComplemento)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaBairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaBairro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaMunicipio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaMunicipio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EnderecoEntregaUf)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnderecoEntregaUf)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
