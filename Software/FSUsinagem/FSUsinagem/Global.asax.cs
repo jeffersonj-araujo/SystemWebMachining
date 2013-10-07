@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FSUsinagem.Infraestrutura;
+using FSUsinagem.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,6 +25,8 @@ namespace FSUsinagem
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            //System.Data.Entity.Database.SetInitializer<FSUsinagemContext>(new UsinagemDbInitializer());
         }
     }
 }

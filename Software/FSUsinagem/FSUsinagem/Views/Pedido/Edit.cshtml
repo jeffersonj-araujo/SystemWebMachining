@@ -1,0 +1,72 @@
+﻿@model FSUsinagem.Models.Pedido
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.PedidoId)
+    @Html.HiddenFor(model => model.EstadoDoPedidoId)
+
+    <fieldset>
+        <legend>Pedido</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PedidoId)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayTextFor(model => model.PedidoId)
+            @Html.ValidationMessageFor(model => model.PedidoId)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataDeEmissao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataDeEmissao)
+            @Html.ValidationMessageFor(model => model.DataDeEmissao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PrevisaoDeEntrega)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PrevisaoDeEntrega)
+            @Html.ValidationMessageFor(model => model.PrevisaoDeEntrega)
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Quantidade</th>
+                    <th>Valor de custo</th>
+                    <th>Valor de venda</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (FSUsinagem.Models.ItemDoPedido itemDoPedido in Model.ItensDoPedido)
+                {
+                    <tr>
+                        <td>@itemDoPedido.Quantidade</td>
+                        <td>@itemDoPedido.ValorDeCusto</td>
+                        <td>@itemDoPedido.ValorDeVenda</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

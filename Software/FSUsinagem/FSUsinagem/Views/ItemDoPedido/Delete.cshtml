@@ -1,0 +1,54 @@
+﻿@model FSUsinagem.Models.ItemDoPedido
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ItemDoPedido</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Quantidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Quantidade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorDeCusto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorDeCusto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ValorDeVenda)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ValorDeVenda)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Produto.Codigo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Produto.Codigo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pedido.PedidoId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pedido.PedidoId)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

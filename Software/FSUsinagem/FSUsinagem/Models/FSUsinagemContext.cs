@@ -34,5 +34,9 @@ namespace FSUsinagem.Models
         public DbSet<TipoDeCadastro> TiposDeCadastro { get; set; }
 
         public DbSet<TipoDeEndereco> TiposDeEndereco { get; set; }
+
+        public DbSet<ItemDoPedido> ItensDoPedido { get; set; }
+
+        public DbSet<Pedido> Pedidoes { get; set; }
     }
 }

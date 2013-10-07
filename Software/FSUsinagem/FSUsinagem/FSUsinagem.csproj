@@ -204,6 +204,8 @@
     <Compile Include="Controllers\CodigoDeOperacaoController.cs" />
     <Compile Include="Controllers\EstadoDoPedidoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ItemDoPedidoController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\PessoaFisicaController.cs" />
     <Compile Include="Controllers\PessoaJuridicaController.cs" />
     <Compile Include="Controllers\ProdutoController.cs" />
@@ -217,12 +219,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infraestrutura\UsinagemDbInitializer.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Banco.cs" />
     <Compile Include="Models\CodigoDeOperacao.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\EstadoDoPedido.cs" />
     <Compile Include="Models\FSUsinagemContext.cs" />
+    <Compile Include="Models\ItemDoPedido.cs" />
+    <Compile Include="Models\Pedido.cs" />
     <Compile Include="Models\Pessoa.cs" />
     <Compile Include="Models\PessoaFisica.cs" />
     <Compile Include="Models\PessoaFisicaDto.cs" />
@@ -410,6 +415,16 @@
     <Content Include="Views\PessoaJuridica\Create.cshtml" />
     <Content Include="Views\PessoaJuridica\Edit.cshtml" />
     <Content Include="Views\PessoaJuridica\Delete.cshtml" />
+    <Content Include="Views\Pedido\Index.cshtml" />
+    <Content Include="Views\Pedido\Details.cshtml" />
+    <Content Include="Views\Pedido\Create.cshtml" />
+    <Content Include="Views\Pedido\Edit.cshtml" />
+    <Content Include="Views\Pedido\Delete.cshtml" />
+    <Content Include="Views\ItemDoPedido\Index.cshtml" />
+    <Content Include="Views\ItemDoPedido\Details.cshtml" />
+    <Content Include="Views\ItemDoPedido\Create.cshtml" />
+    <Content Include="Views\ItemDoPedido\Edit.cshtml" />
+    <Content Include="Views\ItemDoPedido\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

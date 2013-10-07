@@ -1,0 +1,29 @@
+﻿@model FSUsinagem.Models.Pedido
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pedido</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DataDeEmissao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DataDeEmissao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PrevisaoDeEntrega)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PrevisaoDeEntrega)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PedidoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
