@@ -18,10 +18,10 @@ namespace FSUsinagem.Models
         public int Quantidade { get; set; }
 
         [Display(Name = "Valor De Custo")]
-        public float ValorDeCusto { get; set; }
+        public decimal? ValorDeCusto { get; set; }
 
         [Display(Name = "Valor De Venda")]
-        public float ValorDeVenda { get; set; }
+        public decimal? ValorDeVenda { get; set; }
 
         public virtual List<Produto> Produtos { get; set; }
 

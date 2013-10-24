@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html lang="pt">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <title>@ViewBag.Title - Usinagem</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
@@ -27,20 +27,20 @@
             </ul>
             <ul id="menu">
                 <li>@Html.ActionLink("Bancos", "Index", "Banco")</li>
-                 <li>@Html.ActionLink("Codigos De Operação", "Index", "CodigoDeOperacao")</li>
+                <li>@Html.ActionLink("Codigos De Operação", "Index", "CodigoDeOperacao")</li>
                 <li>@Html.ActionLink("Estados De Pedido", "Index", "EstadoDoPedido")</li>
                 <li>@Html.ActionLink("Pessoas Físicas", "Index", "PessoaFisica")</li>
                 <li>@Html.ActionLink("Pessoas Jurídica", "Index", "PessoaJuridica")</li>
                 <li>@Html.ActionLink("Produtos", "Index", "Produto")</li>
-                 <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
-                              
+                <li>@Html.ActionLink("Pedidos", "Index", "Pedido")</li>
+                <li>@Html.ActionLink("Itens Do Pedido", "Create", "ItemDoPedido")</li>
             </ul>
-            <ul id="menu">       
+            <ul id="menu">
                 <li>@Html.ActionLink("Tipos de Cadastro", "Index", "TipoDeCadastro")</li>
                 <li>@Html.ActionLink("Tipos de Endereço", "Index", "TipoDeEndereco")</li>
-                <li>@Html.ActionLink("Tipos de Produto", "Index", "TipoDeProduto")</li>              
+                <li>@Html.ActionLink("Tipos de Produto", "Index", "TipoDeProduto")</li>
             </ul>
-        </nav> 
+        </nav>
         <p>Saiba mais sobre a <a href="http://google.com.br">FitSoft</a></p>
         <p>&copy; @DateTime.Now.Year -FitSoft - Consultoria e Engenharia de Projeto S.A.</p>
     </footer>

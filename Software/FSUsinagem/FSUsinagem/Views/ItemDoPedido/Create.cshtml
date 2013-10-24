@@ -9,6 +9,7 @@
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.PedidoId);
 
     <fieldset>
         <legend>ItemDoPedido</legend>
@@ -43,16 +44,7 @@
         <div class="editor-field">
             @Html.DropDownList("ProdutoId", String.Empty)
             @Html.ValidationMessageFor(model => model.ProdutoId)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PedidoId, "Pedido")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("PedidoId", String.Empty)
-            @Html.ValidationMessageFor(model => model.PedidoId)
-        </div>
-
+        </div>           
         <p>
             <input type="submit" value="Create" />
         </p>
@@ -62,6 +54,7 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

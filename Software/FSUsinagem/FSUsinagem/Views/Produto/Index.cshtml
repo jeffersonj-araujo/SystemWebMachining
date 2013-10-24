@@ -23,10 +23,6 @@
         <th>
             @Html.DisplayNameFor(model => model.ValorDeVenda)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TipoDeProduto.Descricao)
-        </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -42,9 +38,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ValorDeVenda)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoDeProduto.Descricao)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ProdutoId }) |

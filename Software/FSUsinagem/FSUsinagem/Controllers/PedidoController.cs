@@ -63,7 +63,7 @@ namespace FSUsinagem.Controllers
             {
                 db.Pedidoes.Add(pedido);
                 db.SaveChanges();
-                return RedirectToAction("Edit", new {id = pedido.PedidoId});
+                return RedirectToAction("Edit", new { id = pedido.PedidoId });
             }
 
             return View(pedido);
@@ -72,13 +72,16 @@ namespace FSUsinagem.Controllers
         //
         // GET: /Pedido/Edit/5
 
-        public ActionResult Edit(int id = 0)
+        public ActionResult Edit(int id = 0, string salvou="")
         {
             Pedido pedido = db.Pedidoes.Find(id);
             if (pedido == null)
             {
                 return HttpNotFound();
             }
+            if (salvou == "sim")
+                ViewBag.Mensagem = "salvo com sucesso";
+            ViewBag.ProdutoId = new SelectList(db.Produtos, "ProdutoId", "Descricao");
             return View(pedido);
         }
 
@@ -93,8 +96,9 @@ namespace FSUsinagem.Controllers
             {
                 db.Entry(pedido).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", new { id = pedido.PedidoId, salvou = "sim" });
             }
+            ViewBag.ProdutoId = new SelectList(db.Produtos, "ProdutoId", "Descricao");
             return View(pedido);
         }
 

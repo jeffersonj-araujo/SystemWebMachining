@@ -38,11 +38,11 @@ namespace FSUsinagem.Controllers
         //
         // GET: /ItemDoPedido/Create
 
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             ViewBag.ProdutoId = new SelectList(db.Produtos, "ProdutoId", "Codigo");
             ViewBag.PedidoId = new SelectList(db.Pedidoes, "PedidoId", "PedidoId");
-            return View();
+            return View(new ItemDoPedido { PedidoId = id });
         }
 
         //
@@ -56,13 +56,36 @@ namespace FSUsinagem.Controllers
             {
                 db.ItensDoPedido.Add(itemdopedido);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", "Pedido", new { id = itemdopedido.PedidoId });
             }
 
             ViewBag.ProdutoId = new SelectList(db.Produtos, "ProdutoId", "Codigo", itemdopedido.ProdutoId);
             ViewBag.PedidoId = new SelectList(db.Pedidoes, "PedidoId", "PedidoId", itemdopedido.PedidoId);
             return View(itemdopedido);
         }
+
+        [HttpPost]
+        public ActionResult CriaRapido(ItemDoPedido itemdopedido)
+        {
+            if (ModelState.IsValid)
+            {
+                itemdopedido.Quantidade = 1;
+                Produto produto = db.Produtos.Find(itemdopedido.ProdutoId);
+                if (produto != null)
+                {
+                    itemdopedido.ValorDeCusto = produto.ValorDeCusto;
+                    itemdopedido.ValorDeVenda = produto.ValorDeVenda;
+                }
+                db.ItensDoPedido.Add(itemdopedido);
+                db.SaveChanges();
+                return RedirectToAction("Edit", "Pedido", new { id = itemdopedido.PedidoId });
+            }
+
+            ViewBag.ProdutoId = new SelectList(db.Produtos, "ProdutoId", "Codigo", itemdopedido.ProdutoId);
+            ViewBag.PedidoId = new SelectList(db.Pedidoes, "PedidoId", "PedidoId", itemdopedido.PedidoId);
+            return View(itemdopedido);
+        }
+
 
         //
         // GET: /ItemDoPedido/Edit/5

@@ -420,7 +420,6 @@
     <Content Include="Views\Pedido\Create.cshtml" />
     <Content Include="Views\Pedido\Edit.cshtml" />
     <Content Include="Views\Pedido\Delete.cshtml" />
-    <Content Include="Views\ItemDoPedido\Index.cshtml" />
     <Content Include="Views\ItemDoPedido\Details.cshtml" />
     <Content Include="Views\ItemDoPedido\Create.cshtml" />
     <Content Include="Views\ItemDoPedido\Edit.cshtml" />
