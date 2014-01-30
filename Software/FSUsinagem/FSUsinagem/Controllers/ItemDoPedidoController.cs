@@ -113,7 +113,7 @@ namespace FSUsinagem.Controllers
             {
                 db.Entry(itemdopedido).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", "Pedido", new { Id = itemdopedido.PedidoId });
             }
             ViewBag.ProdutoId = new SelectList(db.Produtos, "ProdutoId", "Codigo", itemdopedido.ProdutoId);
             ViewBag.PedidoId = new SelectList(db.Pedidoes, "PedidoId", "PedidoId", itemdopedido.PedidoId);
