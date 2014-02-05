@@ -424,6 +424,7 @@
     <Content Include="Views\ItemDoPedido\Create.cshtml" />
     <Content Include="Views\ItemDoPedido\Edit.cshtml" />
     <Content Include="Views\ItemDoPedido\Delete.cshtml" />
+    <Content Include="Views\Pedido\Painel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

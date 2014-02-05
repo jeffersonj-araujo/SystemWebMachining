@@ -128,6 +128,11 @@ namespace FSUsinagem.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult Painel()
+        {
+            return View();
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
