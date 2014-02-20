@@ -130,7 +130,8 @@ namespace FSUsinagem.Controllers
 
         public ActionResult Painel()
         {
-            return View();
+            var estadosDosPedidos = from e in db.EstadosDePedido select e;
+            return View(estadosDosPedidos.ToList());
         }
 
         protected override void Dispose(bool disposing)

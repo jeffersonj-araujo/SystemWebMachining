@@ -1,4 +1,4 @@
-﻿@model FSUsinagem.Models.Pedido
+﻿@model List<FSUsinagem.Models.EstadoDoPedido>
 @{
     ViewBag.Title = "Painel De Pedidos";
 }
@@ -7,39 +7,25 @@
 <table border = "1">
     <thead>
        <tr>
+           @foreach (var Estado in Model)
+           {                    
            <th>
-               Em Aberto            
+               @Estado.Descricao            
            </th>
-           <th>
-                Aprovados
-           </th>
-           <th>
-                Em Produção
-           </th>
-           <th>
-                Entregue nos ultimos 7 dias
-           </th>
+           }    
        </tr> 
     </thead>
     <tbody>
         <tr>
-            
-            <td>           
-               <font size =" 2"> 1003 - POLY BLA BLA BLA - R$ 10.000,00 - 9 Dias <br />
-                1003 - POLY BLA BLA BLA - R$ 10.000,00 - 9 Dias<br />
-                1003 - POLY BLA BLA BLA - R$ 10.000,00 - 9 Dias
-            </td>
-
+            @foreach (var Estado in Model)
+            {                                                   
             <td>
-               <font size =" 2"> 1003 - POLY BLA BLA BLA - R$ 10.000,00 - 9 Dias</font>
+                @foreach (var Pedido in Estado.Pedidos)
+                {              
+                <div>@Pedido.PedidoId - POLY BLA BLA BLA - R$ 10.000,00 - @Pedido.PrevisaoDeEntrega</div> 
+                }
             </td>
-            <td>
-               <font size =" 2"> 1003 - POLY BLA BLA BLA - R$ 10.000,00 - 9 Dias</font>
-            </td>
-            <td>
-               <font size =" 2"> 1003 - POLY BLA BLA BLA - R$ 10.000,00 - 9 Dias</font>
-            </td>
-            
+            }
         </tr>
     </tbody>
 </table>
